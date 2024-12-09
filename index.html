@@ -7,19 +7,595 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #2c3855;
+  --primary-color-dark: #435681;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1920px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 7rem 1rem;
+}
+.header__container {
+  padding: 2rem 2rem 6rem 2rem; 
+}
+.section__header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.travel__planners {
+  display: block;
+  font-size: 1rem; 
+  font-weight: 400; 
+  color: var(--text-dark); 
+}
+
+
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+.header__container {
+  padding: 1rem 1rem 5rem 1rem;
+}
+
+.header__image__container {
+  position: relative;
+  min-height: 600px;
+  background-image: linear-gradient(
+      to right,
+      rgba(44, 56, 85, 0.9),
+      rgba(100, 125, 187, 0.1)
+    ),
+    url("assets/header.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 2rem;
+}
+
+.header__content {
+  max-width: 600px;
+  padding: 5rem 2rem;
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.header__content p {
+  color: var(--extra-light);
+}
+
+.booking__container {
+  position: absolute;
+  bottom: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 6rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.booking__container form {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.booking__container .input__group {
+  width: 100%;
+  position: relative;
+}
+
+.booking__container label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.booking__container input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--primary-color);
+  color: var(--text-dark);
+}
+
+.booking__container input:focus ~ label {
+  font-size: 0.8rem;
+  top: 0;
+}
+
+.booking__container .form__group p {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.booking__container .btn {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.booking__container .btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.section__subtext {
+  font-size: 1rem; 
+  color: #555; 
+  margin-top: 0rem; 
+  text-align: center; 
+  font-style: italic;
+  line-height: 1; 
+}
+
+
+.popular__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.popular__card {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(4, 4, 4, 0.1);
+  color: #657171;
+}
+
+.popular__content {
+  padding: 1rem;
+}
+
+.popular__card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.popular__card__header h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.popular__content p {
+  color: var(--text-light);
+}
+
+.client {
+  background-color: var(--extra-light);
+}
+
+.client__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.client__card {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.client__card img {
+  max-width: 80px;
+  margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 100%;
+}
+
+.client__card p {
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.reward__container {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.reward__container p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.reward__container h4 {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.reward__btn {
+  padding: 1rem 3rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reward__btn:hover {
+  background-color: var(--primary-color-dark);
+}
+.footer {
+  background-color: var(--extra-light);
+  padding: 2rem 0;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equally spaced columns */
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer__col {
+  text-align: center;
+}
+
+.footer__logo {
+  max-width: 250px;
+  margin: auto;
+  display: block;
+}
+
+.footer__col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.footer__link {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer__link:hover {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
+.footer__col p {
+  margin-bottom: 0.8rem;
+}
+.footer__bar {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--text-light);
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+@media (width < 900px) {
+  .about-us {
+    display: none;
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  img {
+    width: 80%; 
+    margin: auto; 
+  }
+
+  
+  .about-us {
+    display: none;
+  }
+
+  
+  .nav__links {
+    gap: 1rem;
+  }
+
+  .header__container {
+    padding-bottom: 25rem;
+  }
+
+
+  .popular__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .client__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer__container {
+    gap: 2rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .header__content h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-us {
+    display: none;
+  }
+
+  .header__content p {
+    font-size: 1rem;
+  }
+
+  
+
+  .popular__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;  /* Add gap between links */
+    padding-top: 1rem;
+  }
+
+  .nav__links .link a {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+  }
+}
+
+
+@media (max-width: 375px) {
+  .header__content h1 {
+    font-size: 2.2rem;
+  }
+
+  .header__content p {
+    font-size: 0.9rem;
+  }
+
+  .nav__links {
+    gap: 0.8rem;  
+  }
+
+  .nav__links .link a {
+    font-size: 1rem; 
+  }
+}
+
+
+.link .dropdown-toggle {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #e6e9e9; /* Teal background */
+  border-radius: 5px;
+  padding: 10px 0;
+  margin: 5px 0 0;
+  list-style: none;
+  width: 180px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+
+.dropdown-menu li a {
+  
+  font-size: 14px;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.dropdown-menu li:last-child a {
+  border-bottom: none;
+}
+
+
+.dropdown-menu li a:hover {
+  background-color: #005959; 
+  color: white;
+}
+
+
+.link:hover .dropdown-menu {
+  display: block;
+}
+
+
+.arrow {
+  font-size: 12px;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 80px; 
+  right: 20px; 
+  background-color: #25d366; 
+  color: white;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.whatsapp-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+    </style>
     <title>Advenire Travel Planners</title>
   </head>
   <body>
     <nav>
       <div class="nav__logo"><span>Advenire</span>
-        <span class="travel__planners">Travel Planners</span>
       </div>
       <ul class="nav__links">
-        <li class="link"><a href="#">Home</a></li>
-        <li class="link"><a href="#">Book</a></li>
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link dropdown">
+          <a href="#" class="dropdown-toggle">Resorts <span class="arrow">▼</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="wayanad.html">Wayanad</a></li>
+            <li><a href="munnar.html">Munnar</a></li>
+            <li><a href="vagamen.html">Vagamon</a></li>
+            <li><a href="kakkadampoyil.html">Ooty</a></li>
+            <li><a href="#">Kodaikanal</a></li>
+            <li><a href="#">Kolukkumalai</a></li>
+          </ul>
+        </li>        
         <li class="link"><a href="#">Blog</a></li>
-        <li class="link"><a href="#">Contact Us</a></li>
+        <li class="link"><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
     <header class="section__container header__container">
@@ -27,104 +603,76 @@
         <div class="header__content">
           <h1>Enjoy Your Dream Vacation</h1>
           <p>Book Resorts and Villas.</p>
-        </div>
-        <div class="booking__container">
-          <form>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Location</label>
-              </div>
-              <p>Where are you going?</p>
-            </div>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Check In</label>
-              </div>
-              <p>Add date</p>
-            </div>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Check Out</label>
-              </div>
-              <p>Add date</p>
-            </div>
-            <div class="form__group">
-              <div class="input__group">
-                <input type="text" />
-                <label>Guests</label>
-              </div>
-              <p>Add guests</p>
-            </div>
-          </form>
-          <button class="btn"><i class="ri-search-line"></i></button>
-        </div>
-      </div>
     </header>
+    
+    <a href="https://wa.me/918590185768?text=Hello%21%20I%27m%20exploring%20your%20website%20and%20can%20I%20know%20more%20about%20it%3F" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+         alt="WhatsApp" 
+         class="whatsapp-icon" />
+</a>
+
+
+ 
 
     <section class="section__container popular__container">
-      <h2 class="section__header">Popular Resorts</h2>
+      <h2 class="section__header">Our Locations</h2>
+      <p class="section__subtext">Browse destinations for your next holiday plan.</p>
       <div class="popular__grid">
         <div class="popular__card">
-          <img src="assets/hilliya.jpeg" alt="popular hotel" />
+          <img src="assets/wayanad.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>Hilliya Resorts</h4>
-              <h4>₹1497</h4>
+              <h4>Wayanad</h4>
             </div>
-            <p>Wayanad,Kerala</p>
+            <p class="description">A tranquil haven nestled in the Western Ghats, famed for its lush greenery and misty hills. <a href="wayanad.html" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/jungle.jpeg" alt="popular hotel" />
+          <img src="assets/Munnar 2.jpeg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>Jungle Beats Resorts</h4>
-              <h4>₹549</h4>
+              <h4>Munnar</h4>
             </div>
-            <p>Wayanad,Kerala</p>
+            <p class="description">The serene hill station renowned for sprawling tea gardens and cool mountain air. <a href="munnar.html" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/thelakeview.jpeg" alt="popular hotel" />
+          <img src="assets/idukki-7362753_1280.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>The Lake View Munnar Resort</h4>
-              <h4>₹599</h4>
+              <h4>Vagamon</h4>
             </div>
-            <p>Munnar,Kerala</p>
+            <p class="description">A picturesque getaway adorned with rolling meadows, pine forests, and cascading waterfalls. <a href="vagamon.html" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/levalor.jpeg" alt="popular hotel" />
+          <img src="assets/360_F_404858879_NUIXWRd9DJa5UYRUoHTWJsOMuZ15JszX.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>Le valor Resorts by Crezenta</h4>
-              <h4>₹449</h4>
+              <h4>Alleppey</h4>
             </div>
-            <p>Wayanad,Kerala</p>
+            <p class="description">Known as the "Venice of the East," Alleppey offers serene backwaters, houseboats, and picturesque canals. <a href="alleppey.html" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/teahill.jpeg" alt="popular hotel" />
+          <img src="assets/hill-6557956_640.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>Munnar Tea Hills Resort</h4>
-              <h4>₹649</h4>
+              <h4>Kakkadampoyil</h4>
             </div>
-            <p>Munnar,Kerala</p>
+            <p class="description">A serene retreat surrounded by verdant hills and enchanting natural beauty. <a href="kakkadampoyil.html" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/cloudend.jpeg" alt="popular hotel" />
+          <img src="assets/istockphoto-478247780-612x612.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
-              <h4>Clouds End Resort</h4>
-              <h4>₹549</h4>
+              <h4>Ernakulam</h4>
             </div>
-            <p>Kakkadampoyil,Kerala</p>
+            <p class="description">A vibrant urban hub blending cultural heritage, scenic waterfronts, and modern amenities. <a href="ernakulam.html" class="view-more">View More</a></p>
           </div>
         </div>
       </div>
@@ -135,7 +683,7 @@
         <h2 class="section__header">What our client say</h2>
         <div class="client__grid">
           <div class="client__card">
-            <img src="assets/kerala.jpeg" alt="client" />
+            <img src="assets/images-4-2.jpeg" alt="client" />
             <p>
               "I was impressed by their professionalism and personal touch. They listened to all our needs and customized a perfect vacation for us. We explored new places with ease and comfort. Can't wait to plan my next trip with them!"  
               — Lakshmi Nair, Kottayam
@@ -143,7 +691,7 @@
             </p>
           </div>
           <div class="client__card">
-            <img src="assets/couple.png" alt="client" />
+            <img src="assets/couple-2.png" alt="client" />
             <p>
               "We had an amazing trip organized by the team! Everything was perfectly planned, from hotel bookings to local tours. They understood exactly what we were looking for and made sure our family had a stress-free vacation. Highly recommend their service!"  
                             — Ravi Menon, Ernakulam
@@ -151,7 +699,7 @@
             </p>
           </div>
           <div class="client__card">
-            <img src="assets/client-3.jpg" alt="client" />
+            <img src="assets/couple-2.png" alt="client" />
             <p>
               "The travel agency made our honeymoon trip to Bali unforgettable! They included special touches that made the experience unique, and every detail was taken care of. We didn't have to worry about a thing. Exceptional service!"  
                                                  — Akhil & Neethu, Thiruvananthapuram
@@ -172,36 +720,25 @@
     <footer class="footer">
       <div class="section__container footer__container">
         <div class="footer__col">
-          <h3>Advenire</h3>
-          <p>
-            At Advenire, we specialize in creating seamless travel experiences tailored to your needs. From booking the best resorts at unbeatable prices to guiding you to the finest dining spots and must-see attractions, we handle every detail. Our comprehensive services ensure that your journey is not only enjoyable but unforgettable, with personalized support and extra amenities that elevate your adventure. Choose Advenire and let us turn your travel dreams into reality.
-          </p>
-          <p>
-          </p>
-        </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <p>About Us</p>
-          <p>Our Team</p>
-          <p>Blog</p>
-          <p>Book</p>
+          <img src="assets/advenire.jpeg" alt="Advenire Logo" class="footer__logo">
         </div>
         <div class="footer__col">
           <h4>Legal</h4>
-          <p>FAQs</p>
-          <p>Terms & Conditions</p>
-          <p>Privacy Policy</p>
+          <p><a href="faq.html" class="footer__link">FAQs</a></p>
+          <p><a  class="footer__link">Terms & Conditions</a></p>
+          <p><a  class="footer__link">Privacy Policy</a></p>
         </div>
         <div class="footer__col">
-          <h4>Contact Us</h4>
-          <p><a href="mailto:adveniretravelplanners@gmail.com">adveniretravelplanners@gmail.com</a></p>
-          <p><a href="#">+91 7510214211</a></p>
-          <p><a href="#">+91 70124200261</a></p>
-          <p><a href="#">+91 8590842883</a></p>
+          <h4>Company</h4>
+          <p><a href="about.html" class="footer__link">About Us</a></p>
+          <p><a href="contact.html" class="footer__link">Contact Us</a></p>
+          <p><a class="footer__link">Blog</a></p>
         </div>
       </div>
-    </footer>
-  </body>git add <filename>
+      <div class="footer__bar">
+        <p>&copy; 2024 Advenire. All rights reserved.</p>
+      </div>
+    </footer>    
+  </body>
 
 </html>
-
