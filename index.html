@@ -7,6 +7,8 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Radley&display=swap" rel="stylesheet">
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
@@ -66,17 +68,22 @@ nav {
   justify-content: space-between;
 }
 
+
 .nav__logo {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: 'Playpen Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
   color: var(--text-dark);
 }
 
+
 .travel__planners {
   display: block;
-  font-size: .9rem; 
+  font-family: 'Radley', serif;
+  font-size: 1rem; 
   font-weight: 300; 
   color: var(--text-dark); 
+  text-align: center;
 }
 
 
@@ -389,10 +396,8 @@ nav {
   .client__grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    font-size: 0.875rem;
   }
-  .client__grid p { /* Adjust text size */
-  font-size: 0.875rem; /* Reduce text size */
-}
 
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
@@ -599,21 +604,21 @@ nav {
 
 <section class="card-section">
   <div class="card">
-    <img src="assets/temple.jpg" alt="Religious Heritage" class="card-img">
+    <img src="assets/kathakali.jpg" alt="Religious Heritage" class="card-img">
     <div class="card-content">
-      <h3>Discover Kerala's Religious Heritage</h3>
+      <h3>Discover Kerala's Cultural Heritage</h3>
       <p>Explore ancient temples, serene churches, historic mosques, vibrant rituals of Theyyam and Padayani that showcase the rich religious heritage of this divine land.</p>
     </div>
   </div>
   <div class="card">
-    <img src="path/to/image2.jpg" alt="Malabar Attractions" class="card-img">
+    <img src="assets/beach.jpg" alt="Malabar Attractions" class="card-img">
     <div class="card-content">
       <h3>Savor Malabar's Diverse Attractions</h3>
       <p>Every day in Malabar is a sensory delight. Explore the serene coastal beauty, historic forts, and exquisite culinary wonders that define this vibrant region of Kerala.</p>
     </div>
   </div>
   <div class="card">
-    <img src="assets/ayur1.jpg" alt="Wellness Retreats" class="card-img">
+    <img src="assets/ayurvedha.jpg" alt="Wellness Retreats" class="card-img">
     <div class="card-content">
       <h3>Experience Kerala's Wellness Retreats</h3>
       <p>Discover traditional Ayurvedic treatments, yoga retreats, wellness resorts, and therapeutic practices rooted in centuries-old traditions for holistic rejuvenation.</p>
@@ -687,19 +692,12 @@ nav {
       <div class="section__container client__container">
         <h2 class="section__header">What our client say</h2>
         <div class="client__grid">
+          
           <div class="client__card">
-            <img src="assets/images-4-2.jpeg" alt="client" />
-            <p>
-              "I was impressed by their professionalism and personal touch. They listened to all our needs and customized a perfect vacation for us. We explored new places with ease and comfort. Can't wait to plan my next trip with them!"  
-              — Lakshmi Nair, Kottayam
-
-            </p>
-          </div>
-          <div class="client__card">
-            <img src="assets/couple-2.png" alt="client" />
+            <img src="assets/adharsh.jpg" alt="client" />
             <p>
               "We had an amazing trip organized by the team! Everything was perfectly planned, from hotel bookings to local tours. They understood exactly what we were looking for and made sure our family had a stress-free vacation. Highly recommend their service!"  
-                            — Ravi Menon, Ernakulam
+                            — Adharsh , Thiruvananthapuram
 
             </p>
           </div>
@@ -707,7 +705,15 @@ nav {
             <img src="assets/couple-2.png" alt="client" />
             <p>
               "The travel agency made our honeymoon trip to Bali unforgettable! They included special touches that made the experience unique, and every detail was taken care of. We didn't have to worry about a thing. Exceptional service!"  
-                                                 — Akhil & Neethu, Thiruvananthapuram
+                                                 — Akhil & Neethu, Karnataka
+            </p>
+          </div>
+          <div class="client__card">
+            <img src="assets/images-4-2.jpeg" alt="client" />
+            <p>
+              "I was impressed by their professionalism and personal touch. They listened to all our needs and customized a perfect vacation for us. We explored new places with ease and comfort. Can't wait to plan my next trip with them!"  
+              — Lakshmi Nair, Kottayam
+
             </p>
           </div>
         </div>
