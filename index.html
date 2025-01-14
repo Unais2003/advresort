@@ -13,7 +13,7 @@
 :root {
   --primary-color: #2c3855;
   --primary-color-dark: #435681;
-  --text-dark: #333333;
+  --text-dark: #fcfcfc;
   --text-light: #767268;
   --extra-light: #f3f4f6;
   --white: #ffffff;
@@ -30,6 +30,7 @@
   max-width: var(--max-width);
   margin: auto;
   padding: 7rem 1rem;
+  background-color: #021907;
 }
 .header__container {
   padding: 2rem 2rem 6rem 2rem; 
@@ -53,7 +54,9 @@ img {
 body {
   font-family: "Poppins", sans-serif;
 }
-
+.heading {
+  background-color: #021907;
+}
 nav {
   max-width: var(--max-width);
   margin: auto;
@@ -71,8 +74,8 @@ nav {
 
 .travel__planners {
   display: block;
-  font-size: 1rem; 
-  font-weight: 400; 
+  font-size: .9rem; 
+  font-weight: 300; 
   color: var(--text-dark); 
 }
 
@@ -102,12 +105,8 @@ nav {
 .header__image__container {
   position: relative;
   min-height: 600px;
-  background-image: linear-gradient(
-      to right,
-      rgba(44, 56, 85, 0.9),
-      rgba(100, 125, 187, 0.1)
-    ),
-    url("assets/header.jpg");
+  background-image:
+    url("assets/11zon_resized.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -284,7 +283,7 @@ nav {
 
 .client__card p {
   text-align: center;
-  color: var(--text-dark);
+  color: rgb(68, 66, 66);
 }
 
 .reward__container {
@@ -331,7 +330,7 @@ nav {
 
 .footer__container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equally spaced columns */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 2rem;
   align-items: center;
 }
@@ -374,7 +373,9 @@ nav {
   text-align: center;
   color: var(--text-light);
   font-size: 0.9rem;
+  background-color: #021907;
 }
+
 @media (width < 900px) {
   .about-us {
     display: none;
@@ -386,9 +387,12 @@ nav {
   }
 
   .client__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
+  .client__grid p { /* Adjust text size */
+  font-size: 0.875rem; /* Reduce text size */
+}
 
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
@@ -400,29 +404,19 @@ nav {
     width: 80%; 
     margin: auto; 
   }
-
   
   .about-us {
     display: none;
   }
 
-  
   .nav__links {
     gap: 1rem;
   }
 
-  .header__container {
-    padding-bottom: 25rem;
-  }
-
-
   .popular__grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .client__grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
 
   .footer__container {
     gap: 2rem;
@@ -430,61 +424,46 @@ nav {
 }
 
 
-@media (max-width: 400px) {
-  .header__content h1 {
-    font-size: 2.5rem;
-  }
 
-  .about-us {
-    display: none;
-  }
-
-  .header__content p {
-    font-size: 1rem;
-  }
-
-  
-
-  .popular__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .client__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .nav__links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;  /* Add gap between links */
-    padding-top: 1rem;
-  }
-
-  .nav__links .link a {
-    font-size: 1.2rem;
-    color: var(--text-dark);
-  }
+.card-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  color: #fcfeff;
+  background-color:  #021907;
 }
 
-
-@media (max-width: 375px) {
-  .header__content h1 {
-    font-size: 2.2rem;
-  }
-
-  .header__content p {
-    font-size: 0.9rem;
-  }
-
-  .nav__links {
-    gap: 0.8rem;  
-  }
-
-  .nav__links .link a {
-    font-size: 1rem; 
-  }
+.card {
+  background-color: #031e08;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex: 1;
+  max-width: 30%;
+  text-align: center;
 }
 
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.card-content p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
 
 .link .dropdown-toggle {
   color: var(--text-light);
@@ -500,7 +479,7 @@ nav {
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #e6e9e9; /* Teal background */
+  background-color: #e6e9e9; 
   border-radius: 5px;
   padding: 10px 0;
   margin: 5px 0 0;
@@ -512,7 +491,6 @@ nav {
 
 
 .dropdown-menu li a {
-  
   font-size: 14px;
   padding: 10px 20px;
   display: block;
@@ -574,15 +552,18 @@ nav {
 }
 
 
-    </style>
-    <title>Advenire Travel Planners</title>
+</style>
+<title>Advenire Travel Planners</title>
   </head>
   <body>
+    <section class="heading">
     <nav>
       <div class="nav__logo"><span>Advenire</span>
+        <span class="travel__planners">Travel Planners</span>
       </div>
       <ul class="nav__links">
         <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="trips.html">Trips</a></li>
         <li class="link dropdown">
           <a href="#" class="dropdown-toggle">Resorts <span class="arrow">▼</span></a>
           <ul class="dropdown-menu">
@@ -598,11 +579,12 @@ nav {
         <li class="link"><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
+  </section>
     <header class="section__container header__container">
       <div class="header__image__container">
         <div class="header__content">
-          <h1>Enjoy Your Dream Vacation</h1>
-          <p>Book Resorts and Villas.</p>
+          <h1>Your Journey our Passion</h1>
+          <p>Book Stays and Trips.</p>
     </header>
     
     <a href="https://wa.me/918590185768?text=Hello%21%20I%27m%20exploring%20your%20website%20and%20can%20I%20know%20more%20about%20it%3F" 
@@ -615,14 +597,37 @@ nav {
 </a>
 
 
- 
+<section class="card-section">
+  <div class="card">
+    <img src="assets/temple.jpg" alt="Religious Heritage" class="card-img">
+    <div class="card-content">
+      <h3>Discover Kerala's Religious Heritage</h3>
+      <p>Explore ancient temples, serene churches, historic mosques, vibrant rituals of Theyyam and Padayani that showcase the rich religious heritage of this divine land.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="path/to/image2.jpg" alt="Malabar Attractions" class="card-img">
+    <div class="card-content">
+      <h3>Savor Malabar's Diverse Attractions</h3>
+      <p>Every day in Malabar is a sensory delight. Explore the serene coastal beauty, historic forts, and exquisite culinary wonders that define this vibrant region of Kerala.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets/ayur1.jpg" alt="Wellness Retreats" class="card-img">
+    <div class="card-content">
+      <h3>Experience Kerala's Wellness Retreats</h3>
+      <p>Discover traditional Ayurvedic treatments, yoga retreats, wellness resorts, and therapeutic practices rooted in centuries-old traditions for holistic rejuvenation.</p>
+    </div>
+  </div>
+</section>
+
 
     <section class="section__container popular__container">
       <h2 class="section__header">Our Locations</h2>
       <p class="section__subtext">Browse destinations for your next holiday plan.</p>
       <div class="popular__grid">
         <div class="popular__card">
-          <img src="assets/wayanad.jpg" alt="popular hotel" />
+          <img src="assets/wayanadu.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
               <h4>Wayanad</h4>
@@ -716,11 +721,10 @@ nav {
         <button class="reward__btn">Join Rewards</button>
       </div>
     </section>
-
     <footer class="footer">
       <div class="section__container footer__container">
         <div class="footer__col">
-          <img src="assets/advenire.jpeg" alt="Advenire Logo" class="footer__logo">
+          <img src="assets/Logo.png" alt="Advenire Logo" class="footer__logo">
         </div>
         <div class="footer__col">
           <h4>Legal</h4>
