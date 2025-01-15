@@ -124,7 +124,9 @@ nav {
   max-width: 600px;
   padding: 5rem 2rem;
 }
-
+.view-more{
+  color: #99999b;
+}
 .header__content h1 {
   margin-bottom: 1rem;
   font-size: 3.5rem;
@@ -259,6 +261,9 @@ nav {
   color: var(--text-dark);
 }
 
+.imgpopular{
+  border-radius: 10px;
+}
 .popular__content p {
   color: var(--text-light);
 }
@@ -394,15 +399,111 @@ nav {
   }
 
   .client__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     font-size: 0.875rem;
   }
 
   .footer__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: 'Playpen Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* Navigation Links */
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.link a {
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--primary-color);
+}
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  padding: 1rem;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0.5rem 0;
+}
+
+.dropdown-menu li a {
+  color: var(--text-dark);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+@media (max-width: 600px) {
+  .nav__links {
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
+    left: 350px; 
+    right: 20px; 
+    background-color: rgb(2, 17, 2); 
+    width: auto; 
+    display: none;
+    padding: 1rem;
+    z-index: 10;
+    border-radius: 15px;
+  }
+
+  .nav__links.show {
+    display: flex;
+  }
+
+  .menu-button {
+    display: block;
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--text-dark);
+    z-index: 11; /* Ensures the menu button stays on top */
+  }
+
+  .dropdown-menu {
+    position: relative;
   }
 }
+
 
 @media (max-width: 600px) {
   img {
@@ -525,8 +626,11 @@ nav {
   margin-left: 5px;
   position: relative;
   top: -2px;
+  transition: transform 0.3s ease;
 }
-
+.dropdown-toggle.active .arrow {
+  transform: rotate(180deg);
+}
 .whatsapp-float {
   position: fixed;
   bottom: 80px; 
@@ -562,28 +666,31 @@ nav {
   </head>
   <body>
     <section class="heading">
-    <nav>
-      <div class="nav__logo"><span>Advenire</span>
-        <span class="travel__planners">Travel Planners</span>
-      </div>
-      <ul class="nav__links">
-        <li class="link"><a href="index.html">Home</a></li>
-        <li class="link"><a href="trips.html">Trips</a></li>
-        <li class="link dropdown">
-          <a href="#" class="dropdown-toggle">Resorts <span class="arrow">▼</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="wayanad.html">Wayanad</a></li>
-            <li><a href="munnar.html">Munnar</a></li>
-            <li><a href="vagamen.html">Vagamon</a></li>
-            <li><a href="kakkadampoyil.html">Ooty</a></li>
-            <li><a href="#">Kodaikanal</a></li>
-            <li><a href="#">Kolukkumalai</a></li>
-          </ul>
-        </li>        
-        <li class="link"><a href="#">Blog</a></li>
-        <li class="link"><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <div class="nav__logo">
+          <span>Advenire</span>
+          <span id="nav-links" class="travel__planners">Travel Planners</span>
+        </div>
+        <div class="menu-button">☰</div>
+        <ul class="nav__links">
+          <li class="link"><a href="#">Home</a></li>
+          <li class="link"><a href="#">Trips</a></li>
+          <li class="link dropdown">
+            <a href="#" class="dropdown-toggle">Resorts <span class="arrow">▼</span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Wayanad</a></li>
+              <li><a href="#">Munnar</a></li>
+              <li><a href="#">Vagamon</a></li>
+              <li><a href="#">Ooty</a></li>
+              <li><a href="#">Kodaikanal</a></li>
+              <li><a href="#">Kolukkumalai</a></li>
+            </ul>
+          </li>
+          <li class="link"><a href="#">Blog</a></li>
+          <li class="link"><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+        
   </section>
     <header class="section__container header__container">
       <div class="header__image__container">
@@ -607,7 +714,7 @@ nav {
     <img src="assets/kathakali.jpg" alt="Religious Heritage" class="card-img">
     <div class="card-content">
       <h3>Discover Kerala's Cultural Heritage</h3>
-      <p>Explore ancient temples, serene churches, historic mosques, vibrant rituals of Theyyam and Padayani that showcase the rich religious heritage of this divine land.</p>
+      <p>Explore ancient temples, serene churches, historic mosques, vibrant rituals of Theyyam, Kathakali and much more that showcase the rich religious and cultural heritage of this divine land.</p>
     </div>
   </div>
   <div class="card">
@@ -632,57 +739,57 @@ nav {
       <p class="section__subtext">Browse destinations for your next holiday plan.</p>
       <div class="popular__grid">
         <div class="popular__card">
-          <img src="assets/wayanadu.jpg" alt="popular hotel" />
+          <img class="imgpopular" src="assets/wayanadu.jpg" alt="popular hotel" /">
           <div class="popular__content">
             <div class="popular__card__header">
               <h4>Wayanad</h4>
             </div>
-            <p class="description">A tranquil haven nestled in the Western Ghats, famed for its lush greenery and misty hills. <a href="wayanad.html" class="view-more">View More</a></p>
+            <p class="description">A tranquil haven nestled in the Western Ghats, famed for its lush greenery and misty hills. <a href="" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/Munnar 2.jpeg" alt="popular hotel" />
+          <img class="imgpopular"src="assets/Munnar 2.jpeg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
               <h4>Munnar</h4>
             </div>
-            <p class="description">The serene hill station renowned for sprawling tea gardens and cool mountain air. <a href="munnar.html" class="view-more">View More</a></p>
+            <p class="description">The serene hill station renowned for sprawling tea gardens and cool mountain air. <a href="" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/idukki-7362753_1280.jpg" alt="popular hotel" />
+          <img class="imgpopular" src="assets/idukki-7362753_1280.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
               <h4>Vagamon</h4>
             </div>
-            <p class="description">A picturesque getaway adorned with rolling meadows, pine forests, and cascading waterfalls. <a href="vagamon.html" class="view-more">View More</a></p>
+            <p class="description">A picturesque getaway adorned with rolling meadows, pine forests, and cascading waterfalls. <a href="" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/360_F_404858879_NUIXWRd9DJa5UYRUoHTWJsOMuZ15JszX.jpg" alt="popular hotel" />
+          <img class="imgpopular" src="assets/360_F_404858879_NUIXWRd9DJa5UYRUoHTWJsOMuZ15JszX.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
               <h4>Alleppey</h4>
             </div>
-            <p class="description">Known as the "Venice of the East," Alleppey offers serene backwaters, houseboats, and picturesque canals. <a href="alleppey.html" class="view-more">View More</a></p>
+            <p class="description">Known as the "Venice of the East," Alleppey offers serene backwaters, houseboats, and picturesque canals. <a href="" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/hill-6557956_640.jpg" alt="popular hotel" />
+          <img class="imgpopular" src="assets/hill-6557956_640.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
               <h4>Kakkadampoyil</h4>
             </div>
-            <p class="description">A serene retreat surrounded by verdant hills and enchanting natural beauty. <a href="kakkadampoyil.html" class="view-more">View More</a></p>
+            <p class="description">A serene retreat surrounded by verdant hills and enchanting natural beauty. <a href="" class="view-more">View More</a></p>
           </div>
         </div>
         <div class="popular__card">
-          <img src="assets/istockphoto-478247780-612x612.jpg" alt="popular hotel" />
+          <img class="imgpopular" src="assets/istockphoto-478247780-612x612.jpg" alt="popular hotel" />
           <div class="popular__content">
             <div class="popular__card__header">
               <h4>Ernakulam</h4>
             </div>
-            <p class="description">A vibrant urban hub blending cultural heritage, scenic waterfronts, and modern amenities. <a href="ernakulam.html" class="view-more">View More</a></p>
+            <p class="description">A vibrant urban hub blending cultural heritage, scenic waterfronts, and modern amenities. <a href="" class="view-more">View More</a></p>
           </div>
         </div>
       </div>
@@ -697,21 +804,21 @@ nav {
             <img src="assets/adharsh.jpg" alt="client" />
             <p>
               "We had an amazing trip organized by the team! Everything was perfectly planned, from hotel bookings to local tours. They understood exactly what we were looking for and made sure our family had a stress-free vacation. Highly recommend their service!"  
-                            — Adharsh , Thiruvananthapuram
+                            — Adarsh , Thiruvananthapuram
 
             </p>
           </div>
           <div class="client__card">
-            <img src="assets/couple-2.png" alt="client" />
+            <img src="assets/couple.jpg" alt="client" />
             <p>
-              "The travel agency made our honeymoon trip to Bali unforgettable! They included special touches that made the experience unique, and every detail was taken care of. We didn't have to worry about a thing. Exceptional service!"  
-                                                 — Akhil & Neethu, Karnataka
+              "The travel agency made our honeymoon trip to Munnar unforgettable! They included special touches that made the experience unique, and every detail was taken care of. We didn't have to worry about anything. Exceptional service!"  
+                                                 — Hudha & Ashique, Kozhikode
             </p>
           </div>
           <div class="client__card">
-            <img src="assets/images-4-2.jpeg" alt="client" />
+            <img src="assets/women.jpg" alt="client" />
             <p>
-              "I was impressed by their professionalism and personal touch. They listened to all our needs and customized a perfect vacation for us. We explored new places with ease and comfort. Can't wait to plan my next trip with them!"  
+              "I was impressed by their professionalism and personalisation. They listened to all our needs and customized a perfect vacation for us. We explored new places with ease and comfort. Can't wait to plan my next trip with them!"  
               — Lakshmi Nair, Kottayam
 
             </p>
@@ -722,33 +829,54 @@ nav {
 
     <section class="section__container">
       <div class="reward__container">
-        <p>100+ discount codes</p>
-        <h4>Join rewards and discover amazing discounts on your booking</h4>
-        <button class="reward__btn">Join Rewards</button>
+        <h4>Join with us and discover amazing discounts on your booking</h4>
+        <a href="https://wa.me/918590185768?text=Hello%21%20I%27m%20exploring%20your%20website%20and%20can%20I%20know%20more%20about%20it%3F" target="_blank">
+          <button class="reward__btn">Book Now</button>
+        </a>
       </div>
     </section>
     <footer class="footer">
       <div class="section__container footer__container">
         <div class="footer__col">
-          <img src="assets/Logo.png" alt="Advenire Logo" class="footer__logo">
+          <img src="assets/Logo 1.png" alt="Advenire Logo" class="footer__logo">
         </div>
         <div class="footer__col">
           <h4>Legal</h4>
-          <p><a href="faq.html" class="footer__link">FAQs</a></p>
+          <p><a class="footer__link">FAQs</a></p>
           <p><a  class="footer__link">Terms & Conditions</a></p>
           <p><a  class="footer__link">Privacy Policy</a></p>
         </div>
         <div class="footer__col">
           <h4>Company</h4>
-          <p><a href="about.html" class="footer__link">About Us</a></p>
-          <p><a href="contact.html" class="footer__link">Contact Us</a></p>
+          <p><a class="footer__link">About Us</a></p>
+          <p><a class="footer__link">Contact Us</a></p>
           <p><a class="footer__link">Blog</a></p>
         </div>
       </div>
       <div class="footer__bar">
         <p>&copy; 2024 Advenire. All rights reserved.</p>
       </div>
-    </footer>    
+    </footer>   
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+        const dropdownMenu = document.querySelector(".dropdown-menu");
+    
+        dropdownToggle.addEventListener("click", function (event) {
+          event.preventDefault();
+          dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+          dropdownToggle.classList.toggle("active");
+        });
+      });
+
+      const menuButton = document.querySelector('.menu-button');
+      const navLinks = document.querySelector('.nav__links');
+
+      menuButton.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+
+    </script>     
   </body>
 
 </html>
