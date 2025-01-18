@@ -407,18 +407,12 @@ nav {
   .footer__container {
     grid-template-columns: repeat(1, 1fr);
   }
-
-}
-@media screen and (max-width: 768px) {
   .logo {
     width: 120px; 
   }
+
 }
 
-@media screen and (max-width: 480px) {
-  .logo {
-    width: 80px; 
-}
 
 nav {
   max-width: var(--max-width);
@@ -511,6 +505,9 @@ nav {
   .dropdown-menu {
     position: relative;
   }
+  .logo {
+    width: 80px;
+  }
 }
 
 
@@ -536,7 +533,9 @@ nav {
   .nav__links.show {
     display: flex;
   }
-
+  .logo {
+    width: 80px; 
+  }
   .menu-button {
     display: block;
     font-size: 40px;
@@ -567,9 +566,12 @@ nav {
     grid-template-columns: repeat(2, 1fr);
   }
 
-
+  
   .footer__container {
     gap: 2rem;
+  }
+  .logo {
+    width: 120px;
   }
 }
 
