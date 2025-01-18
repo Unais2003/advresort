@@ -575,46 +575,35 @@ nav {
 }
 
 
-
 .card-section {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
-  color: #fcfeff;
-  background-color:  #021907;
+  flex-wrap: wrap; /* Allows the cards to wrap to the next row */
+  gap: 16px; /* Optional: Adds space between cards */
 }
 
 .card {
-  background-color: #031e08;
-  border-radius: 10px;
+  flex: 1; /* Makes all cards take equal width */
+  max-width: calc(33.33% - 16px); /* Keeps three cards per row on larger screens with space between */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  flex: 1;
-  max-width: 30%;
-  text-align: center;
 }
 
-.card-img {
-  width: 100%;
+.card img {
+  width: 100%; /* Ensures the images fit within the card */
   height: auto;
-  object-fit: cover;
+  border-radius: 4px; /* Optional: Adds rounded corners */
 }
 
 .card-content {
-  padding: 15px;
+  padding: 16px;
 }
 
-.card-content h3 {
-  font-size: 18px;
-  margin: 10px 0;
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%; /* Full width for each card on mobile */
+  }
 }
 
-.card-content p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.5;
-}
 
 .link .dropdown-toggle {
   color: var(--text-light);
