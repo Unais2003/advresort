@@ -407,6 +407,10 @@ nav {
   .footer__container {
     grid-template-columns: repeat(1, 1fr);
   }
+  .logo {
+  width: 200px;
+  height: auto;
+}
 }
 
 nav {
@@ -537,13 +541,20 @@ nav {
   .dropdown-menu {
     position: relative;
   }
+  .logo {
+  width: 150px;
+  height: auto;
+}
 }
 @media (max-width: 600px) {
   img {
     width: 80%; 
     margin: auto; 
   }
-  
+  .logo {
+  width: 200px;
+  height: auto;
+}
   .about-us {
     display: none;
   }
@@ -692,6 +703,15 @@ nav {
   transform: scale(1.1);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
+.nav__logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 300px;
+  height: auto;
+}
 
 
 </style>
@@ -701,9 +721,9 @@ nav {
     <section class="heading">
       <nav>
         <div class="nav__logo">
-          <span>Advenire</span>
-          <span id="nav-links" class="travel__planners">Travel Planners</span>
+          <img src="assets/logo5.png" alt="Advenire Logo" class="logo">
         </div>
+        
         <div class="menu-button">☰</div>
         <ul class="nav__links">
           <li class="link"><a href="#">Home</a></li>
@@ -763,6 +783,7 @@ nav {
       <h3>Experience Kerala's Wellness Retreats</h3>
       <p>Discover traditional Ayurvedic treatments, yoga retreats, wellness resorts, and therapeutic practices rooted in centuries-old traditions for holistic rejuvenation.</p>
     </div>
+
   </div>
 </section>
 
